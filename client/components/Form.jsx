@@ -1,9 +1,11 @@
 import React from 'react'
 
+// const mapPng = ''
+
 class Form extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {value: 'confident'}
+    this.state = {value: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/World_Map_1689.JPG'}
 
     // this.handleChange = this.handleChange.bind(this)
     // this.handleSumbit = this.handleSubmit.bind(this)
@@ -15,7 +17,7 @@ class Form extends React.Component {
   }
 
   handleSubmit (event) {
-    alert(this.state.value)
+    <img src={this.state.value}/>
     event.preventDefault()
   }
 
