@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <h1>React development has begun!</h1>
-      {/* <Route Form path="/" component={Form} /> */}
+      <Route Form path="/" component={Form} />
       <Route Form path="/map" component={GoogleApiWrapper} />
     </div>
   )
