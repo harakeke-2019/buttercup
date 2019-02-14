@@ -1,37 +1,38 @@
 import React from 'react'
 
 class Form extends React.Component {
-  state = {
-    confident:false,
-    relaxed: false,
-    naughty:false
+  constructor (props) {
+    super(props)
+    this.state = {value: 'confident'}
+
+    // this.handleChange = this.handleChange.bind(this)
+    // this.handleSumbit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handleChange (event) {
+    this.setState({value: event.target.value})
   }
 
-onConfidentClick {
-  this.setState ({
-    confident:true
-  })
-
-}
+  handleSubmit (event) {
+    alert(this.state.value)
+    event.preventDefault()
+  }
 
   render () {
     return (
-      <div>
-        <h2>This is form</h2>
-        <form>
-          <select name="feelings">
-            <option value="confident" onClick={this.onConfidentClick}>Confident</option>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+            Pick a feeling:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="confident">Confident</option>
             <option value="relaxed">Relaxed</option>
             <option value="naughty">Naughty</option>
+            <option value="vegan">Vocally Vegan</option>
           </select>
-          <br/>
-          {/* <input type="submit">Submit</input> */}
-        </form>
-      </div>
-
-      <div className="map">
-      </div>
-
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
     )
   }
 }

@@ -5,7 +5,7 @@ import Form from './Form'
 const App = () => {
   return (
     <div>
-      <h1>React development has begun!</h1>
+      <h1>Feeling Map</h1>
       <Route Form path="/" component={Form} />
     </div>
   )
