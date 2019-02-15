@@ -3,16 +3,13 @@ import {Route} from 'react-router-dom'
 import Form from './Form'
 import GoogleApiWrapper from './MapView'
 
-
 const App = () => {
-
-let latitude = 40.7128
-let longitude = -74.0060
+  let latitude = -36.994374
+  let longitude = 174.884119
   return (
     <div>
-      <h1>Feeling Map</h1>
-      <Route path="/" component={Form} />
-      <Route path="/:lat/:lon" render={() => { return <GoogleApiWrapper latitude={latitude} longitude={longitude}/> }}/>
+      <Route Form path="/" component={Form} />
+      <Route path="/" render={() => { return <div className="col2"> <GoogleApiWrapper latitude={latitude} longitude={longitude}/> </div> }}/>
     </div>
   )
 }
