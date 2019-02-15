@@ -28,7 +28,7 @@ class Form extends React.Component {
 
   handleChange (event) {
     this.setState({value: event.target.value})
-    this.props.history.push(`/${event.target.value}`)
+    this.props.history.push(`${event.target.value}`)
   }
 
   handleSubmit (event) {
