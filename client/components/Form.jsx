@@ -40,20 +40,22 @@ class Form extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
-          <label>
+        <div className="mainWrapper">
+          <form onSubmit={this.handleSubmit}>
+            <label>
             Pick a feeling:
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value={imgData.maps}>Confident</option>
-              <option value={imgData.cow}>Relaxed</option>
-              <option value="naughty">Naughty</option>
-              <option value="vegan">Vocally Vegan</option>
-            </select>
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        <img src={this.state.value} height="600" width="600"/>
-        {this.renderRedirect()}
+              <select value={this.state.value} onChange={this.handleChange}>
+                <option value={imgData.maps}>Confident</option>
+                <option value={imgData.cow}>Relaxed</option>
+                <option value="naughty">Naughty</option>
+                <option value="vegan">Vocally Vegan</option>
+              </select>
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+          <img src={this.state.value} height="600" width="600"/>
+          {this.renderRedirect()}
+        </div>
       </React.Fragment>
     )
   }
