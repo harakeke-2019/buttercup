@@ -45,12 +45,15 @@ class Form extends React.Component {
           <div className="row">
             <div className="col1">
               <div>
-                <h1 className="header">Feeling Map</h1>
+                <h1 className="header">Mappily ever after</h1>
                 <h2 className="title">
                 ABOUT
                 </h2>
                 <p className="Paragraph">
-                Are you feeling lost? Are you feelin confused with your life. Well you need the Feelings map! For people who are searching for new perspectives to increase there mindfullness, and worldly view.
+                Are you feeling lost? Are you feeling confused with your life and emotions? Well boy oh boy do we have the answer for you! The Mappily Ever After Feelings map! For people who are searching for new perspectives to increase their mindfulness, and feel something new.</p>
+                <br />
+                <h2 className="title">HOW IT WORKS</h2>
+                <p>Simply enter an emotion you wish to feel, and thousands of our tiny little happiness elves will work their magic to suggest the perfect place in your city to make you feel that way. Give it a go below!
                 </p>
                 <form className="dropdown" onSubmit={this.handleSubmit}>
                   <label>
@@ -64,7 +67,7 @@ class Form extends React.Component {
                         <option value="/-36.845177/174.768294">Naughty</option>
                         <option value="/-36.844618/174.735628">Visibly Vegan</option>
                       </select>
-                      <input type="submit" value="Submit" />
+                      <input type="submit" value="Submit" onClick={this.state.value}/>
                     </div>
                   </label>
                 </form>
