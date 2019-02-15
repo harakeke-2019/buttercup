@@ -41,20 +41,39 @@ class Form extends React.Component {
     return (
       <React.Fragment>
         <div className="mainWrapper">
-          <form onSubmit={this.handleSubmit}>
-            <label>
+          <div className="row">
+            <div className="col1">
+              <div>
+                <h1 className="header">Feeling Map</h1>
+                <h2 className="title">
+                ABOUT
+                </h2>
+                <p className="Paragraph">
+                Are you feeling lost? Are you feelin confused with your life. Well you need the Feelings map! For people who are searching for new perspectives to increase there mindfullness, and worldly view.
+                </p>
+                <form className="dropdown" onSubmit={this.handleSubmit}>
+                  <label>
+                    <div className="button">
             Pick a feeling:
-              <select value={this.state.value} onChange={this.handleChange}>
-                <option value={imgData.maps}>Confident</option>
-                <option value={imgData.cow}>Relaxed</option>
-                <option value="naughty">Naughty</option>
-                <option value="vegan">Vocally Vegan</option>
-              </select>
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-          <img src={this.state.value} height="600" width="600"/>
-          {this.renderRedirect()}
+                    </div>
+                    <div className="selection">
+                      <select value={this.state.value} onChange={this.handleChange}>
+                        <option value={imgData.maps}>Confident</option>
+                        <option value={imgData.cow}>Relaxed</option>
+                        <option value="naughty">Naughty</option>
+                        <option value="vegan">Vocally Vegan</option>
+                      </select>
+                      <input type="submit" value="Submit" />
+                    </div>
+                  </label>
+                </form>
+              </div>
+            </div>
+            <div className="noRender">
+              <img src={this.state.value} height="600" width="600"/>
+              {this.renderRedirect()}
+            </div>
+          </div>
         </div>
       </React.Fragment>
     )

@@ -1,0 +1,71 @@
+body{
+    background-image: url('Background.png');
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #372D7D;
+}
+
+.mainWrapper{
+  margin-top: 15vh;
+  margin-bottom: 10vh;
+}
+
+.col1{
+  margin-left: 60px; 
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  padding: 0px 40px 0px 40px;
+  width: 600px;
+  }
+
+  .col2{
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    padding: 0px 40px 0px 40px;
+    width: 49%;
+    }
+  
+  .noRender{
+    display:none;
+  }
+
+  .dropdown{
+    padding: 15px; 
+    margin-top: 100px;
+    width: 400px;
+    height: auto;
+    background-color: #005D6C;
+  }
+  .button{
+    color: white;
+    display: inline-block;
+    padding: 25px 0px 0px 10px;
+    width: 150px;
+    height: 50px;
+    background-color: #005D6C;
+  }
+
+  .selection{
+    width: 200px;
+    display: inline-block;
+    background-color: #005D6C;
+  }
+
+  .paragraph{
+    font-size: 10px;
+    padding-bottom: 20px;
+  
+  }
+
+  .title{
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  h1{
+    font-size: 70px;
+  }
