@@ -1,7 +1,7 @@
 const feelings = {
   confident: {
     RainbowsEnd: {
-      lat: '-36.994374 ',
+      lat: '-36.994374',
       long: '174.884119'
     },
     Motorcross: {
