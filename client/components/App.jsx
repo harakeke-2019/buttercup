@@ -4,8 +4,8 @@ import Form from './Form'
 import GoogleApiWrapper from './MapView'
 
 const App = () => {
-  let latitude = 40.7128
-  let longitude = -74.0060
+  let latitude = -36.994374
+  let longitude = 174.884119
   return (
     <div>
       <Route Form path="/" component={Form} />

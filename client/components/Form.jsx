@@ -28,6 +28,7 @@ class Form extends React.Component {
 
   handleChange (event) {
     this.setState({value: event.target.value})
+    this.props.history.push(`/${event.target.value}`)
   }
 
   handleSubmit (event) {
@@ -58,11 +59,11 @@ class Form extends React.Component {
                     </div>
                     <div className="selection">
                       <select value={this.state.value} onChange={this.handleChange}>
-                        <option value={imgData.maps}>Confident</option>
-                        <option value={imgData.cow}>Relaxed</option>
-                        <option value="naughty">Naughty</option>
-                        <option value="vegan">Vocally Vegan</option>
-                      </select>
+              <option value="/-36.994374/174.884119" >Confident</option>
+              <option value="/-36.942972/174.46315">Relaxed</option>
+              <option value="/-36.845177/174.768294">Naughty</option>
+              <option value="/-36.844618/174.735628">Vocally Vegan</option>
+            </select>
                       <input type="submit" value="Submit" />
                     </div>
                   </label>
@@ -75,6 +76,7 @@ class Form extends React.Component {
             </div>
           </div>
         </div>
+
       </React.Fragment>
     )
   }
