@@ -48,7 +48,7 @@ class Form extends React.Component {
               <option value="/-36.994374/174.884119" >Confident</option>
               <option value="/-36.942972/174.46315">Relaxed</option>
               <option value="/-36.845177/174.768294">Naughty</option>
-              <option value="/-36.844618/174.735628">Vocally Vegan</option>
+              <option value="/-36.844618/174.735628">Visibly Vegan</option>
             </select>
           </label>
           <input type="submit" value="Submit" />
