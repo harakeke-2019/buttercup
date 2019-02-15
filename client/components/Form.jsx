@@ -45,10 +45,10 @@ class Form extends React.Component {
           <label>
             Pick a feeling:
             <select value={this.state.value} onChange={this.handleChange}>
-              <option value={imgData.maps} >Confident</option>
-              <option value={imgData.cow}>Relaxed</option>
-              <option value="naughty">Naughty</option>
-              <option value="vegan">Vocally Vegan</option>
+              <option value="/-36.994374/174.884119" >Confident</option>
+              <option value="/-36.942972/174.46315">Relaxed</option>
+              <option value="/-36.845177/174.768294">Naughty</option>
+              <option value="/-36.844618/174.735628">Vocally Vegan</option>
             </select>
           </label>
           <input type="submit" value="Submit" />
