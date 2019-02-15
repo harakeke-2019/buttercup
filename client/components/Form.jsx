@@ -1,10 +1,15 @@
 import React from 'react'
 
+// const mapPng = ''
+const imgData = {
+  maps: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/World_Map_1689.JPG',
+  cow: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/CH_cow_2_cropped.jpg'
+}
+
 class Form extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {value: 'confident'}
-
+    this.state = {value: imgData.maps}
     // this.handleChange = this.handleChange.bind(this)
     // this.handleSumbit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -15,24 +20,26 @@ class Form extends React.Component {
   }
 
   handleSubmit (event) {
-    alert(this.state.value)
     event.preventDefault()
   }
 
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <React.Fragment>
+        <form onSubmit={this.handleSubmit}>
+          <label>
             Pick a feeling:
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="confident">Confident</option>
-            <option value="relaxed">Relaxed</option>
-            <option value="naughty">Naughty</option>
-            <option value="vegan">Vocally Vegan</option>
-          </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value={imgData.maps}>Confident</option>
+              <option value={imgData.cow}>Relaxed</option>
+              <option value="naughty">Naughty</option>
+              <option value="vegan">Vocally Vegan</option>
+            </select>
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <img src={this.state.value} height="600" width="600"/>
+      </React.Fragment>
     )
   }
 }
