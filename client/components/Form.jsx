@@ -1,4 +1,5 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 
 // const mapPng = ''
 const imgData = {
@@ -9,17 +10,30 @@ const imgData = {
 class Form extends React.Component {
   constructor (props) {
     super(props)
-    this.state = {value: imgData.maps}
+    this.state = {
+      value: imgData.maps,
+      redirect: false
+    }
     // this.handleChange = this.handleChange.bind(this)
     // this.handleSumbit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  renderRedirect () {
+    if (this.state.redirect) {
+      return <Redirect to='/map' />
+    }
+  }
+
   handleChange (event) {
     this.setState({value: event.target.value})
   }
 
   handleSubmit (event) {
+    this.setState({
+      redirect: true
+    })
     event.preventDefault()
   }
 
@@ -39,6 +53,7 @@ class Form extends React.Component {
           <input type="submit" value="Submit" />
         </form>
         <img src={this.state.value} height="600" width="600"/>
+        {this.renderRedirect()}
       </React.Fragment>
     )
   }
