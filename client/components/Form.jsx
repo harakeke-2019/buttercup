@@ -28,6 +28,7 @@ class Form extends React.Component {
 
   handleChange (event) {
     this.setState({value: event.target.value})
+    this.props.history.push(`/${event.target.value}`)
   }
 
   handleSubmit (event) {
@@ -44,7 +45,7 @@ class Form extends React.Component {
           <label>
             Pick a feeling:
             <select value={this.state.value} onChange={this.handleChange}>
-              <option value={imgData.maps}>Confident</option>
+              <option value={imgData.maps} >Confident</option>
               <option value={imgData.cow}>Relaxed</option>
               <option value="naughty">Naughty</option>
               <option value="vegan">Vocally Vegan</option>
