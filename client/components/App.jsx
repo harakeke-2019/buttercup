@@ -8,7 +8,7 @@ const App = () => {
     <div>
       <h1>Feeling Map</h1>
       <Route Form path="/" component={Form} />
-      <Route Form path="/map" component={GoogleApiWrapper} />
+      <Route Form path="/" component={GoogleApiWrapper} />
     </div>
   )
 }
