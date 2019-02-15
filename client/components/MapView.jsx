@@ -7,19 +7,16 @@ const mapStyles = {
 }
 
 export class MapContainer extends Component {
-constructor(props){
-super(props)
-this.state.latitude=this.props.match.params.lat
-this.state.longitude=this.props.match.params.lon
-
 state = {
-  showingInfoWindow: false,  
-  activeMarker: {},          
-  selectedPlace: {}          
-};
+      showingInfoWindow: false,  
+      activeMarker: {},          
+      selectedPlace: {},
+      latitude : this.props.match.params.lat,
+      longitude: this.props.match.params.lon          
+    }
 
-}
- 
+  
+  
   
 
   onMarkerClick = (props, marker, e) =>
@@ -59,5 +56,5 @@ state = {
 }
 
 export default GoogleApiWrapper({
-  apiKey: ' AIzaSyCWIIoZNYtpwXHn_055IaJVebHjTjVDrLg '
+  apiKey: 'AIzaSyCWIIoZNYtpwXHn_055IaJVebHjTjVDrLg'
 })(MapContainer)
