@@ -7,11 +7,18 @@ const mapStyles = {
 }
 
 export class MapContainer extends Component {
+constructor(props){
+super(props)
+this.state.latitude=props.latitude
+this.state.longitude=props.longitude
+}
+strong
   state = {
     showingInfoWindow: false,  
     activeMarker: {},          
     selectedPlace: {}          
   };
+  
 
   onMarkerClick = (props, marker, e) =>
     this.setState({
@@ -35,8 +42,8 @@ export class MapContainer extends Component {
       <Map
         google={this.props.google}
         zoom={14}
-        // style={style}
-        initialCenter={{ lat: -36.8485, lng: 174.7633 }}>
+        style={mapStyles}
+        initialCenter={{ lat: this.state.latitude, lng: this.state.longitude }}>
         
         <Marker onClick={this.onMarkerClick} name={'Auckland City'}/>
         <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow} onClose={this.onClose}>
