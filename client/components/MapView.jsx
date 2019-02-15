@@ -9,15 +9,17 @@ const mapStyles = {
 export class MapContainer extends Component {
 constructor(props){
 super(props)
-this.state.latitude=props.latitude
-this.state.longitude=props.longitude
+this.state.latitude=this.props.match.params.lat
+this.state.longitude=this.props.match.params.lon
+
+state = {
+  showingInfoWindow: false,  
+  activeMarker: {},          
+  selectedPlace: {}          
+};
+
 }
-strong
-  state = {
-    showingInfoWindow: false,  
-    activeMarker: {},          
-    selectedPlace: {}          
-  };
+ 
   
 
   onMarkerClick = (props, marker, e) =>

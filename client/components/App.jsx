@@ -11,8 +11,8 @@ let longitude = -74.0060
   return (
     <div>
       <h1>Feeling Map</h1>
-      <Route Form path="/" component={Form} />
-      <Route path="/" render={() => { return <GoogleApiWrapper latitude={latitude} longitude={longitude}/> }}/>
+      <Route path="/" component={Form} />
+      <Route path="/:lat/:lon" render={() => { return <GoogleApiWrapper latitude={latitude} longitude={longitude}/> }}/>
     </div>
   )
 }
