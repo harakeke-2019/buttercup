@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Map, GoogleApiWrapper} from 'google-maps-react'
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
   width: '60%',
@@ -7,18 +7,45 @@ const mapStyles = {
 }
 
 export class MapContainer extends Component {
-  render () {
+  state = {
+    showingInfoWindow: false,  
+    activeMarker: {},          
+    selectedPlace: {}          
+  };
+
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+
+  onClose = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
+
+
+  render() {
     return (
       <Map
         google={this.props.google}
         zoom={14}
-        style={mapStyles}
-        initialCenter={{
-          lat: -36.8485,
-          lng: 174.7633
-        }}
-      />
-    )
+        // style={style}
+        initialCenter={{ lat: -36.8485, lng: 174.7633 }}>
+        
+        <Marker onClick={this.onMarkerClick} name={'Auckland City'}/>
+        <InfoWindow marker={this.state.activeMarker} visible={this.state.showingInfoWindow} onClose={this.onClose}>
+          <div>
+            <h4>{this.state.selectedPlace.name}</h4>
+          </div>
+        </InfoWindow>
+      </Map>
+    );
   }
 }
 
