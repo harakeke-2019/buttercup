@@ -7,8 +7,8 @@ const App = () => {
   return (
     <div>
       <h1>Feeling Map</h1>
-      <Route Form exact path="/" component={Form} />
-      <Route Form path="/map" component={GoogleApiWrapper} />
+      <Route Form path="/" component={Form} />
+      <Route Form path="/" component={GoogleApiWrapper} />
     </div>
   )
 }
