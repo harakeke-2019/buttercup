@@ -8,9 +8,8 @@ const App = () => {
   let longitude = 174.884119
   return (
     <div>
-      <h1>Feeling Map</h1>
       <Route Form path="/" component={Form} />
-      <Route path="/" render={() => { return <GoogleApiWrapper latitude={latitude} longitude={longitude}/> }}/>
+      <Route path="/" render={() => { return <div className="col2"> <GoogleApiWrapper latitude={latitude} longitude={longitude}/> </div> }}/>
     </div>
   )
 }
